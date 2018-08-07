@@ -1,0 +1,58 @@
+{
+  "_from": "git+https://github.com/stringeecom/stringee-cordova-plugin.git",
+  "_id": "stringee-cordova-plugin@1.0.0",
+  "_inBundle": false,
+  "_location": "/stringee-cordova-plugin",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "https://github.com/stringeecom/stringee-cordova-plugin",
+    "rawSpec": "https://github.com/stringeecom/stringee-cordova-plugin",
+    "saveSpec": "git+https://github.com/stringeecom/stringee-cordova-plugin.git",
+    "fetchSpec": "https://github.com/stringeecom/stringee-cordova-plugin.git",
+    "gitCommittish": null
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/stringeecom/stringee-cordova-plugin.git#9103da0bd1fdd46c24088e841dd8d681a501ebac",
+  "_spec": "https://github.com/stringeecom/stringee-cordova-plugin",
+  "_where": "/Users/hoangduoc/Desktop/PhoneGap/OneToOneCallSample",
+  "author": {
+    "name": "Stringee",
+    "email": "info@stringee.com"
+  },
+  "bugs": {
+    "url": "https://github.com/stringeecom/stringee-cordova-plugin/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "stringee-cordova-plugin",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "dependencies": {
+    "exec": "^0.2.0",
+    "tar": "^2.0.0"
+  },
+  "deprecated": false,
+  "description": "Add live video streaming to your Cordova Application",
+  "homepage": "https://github.com/stringeecom/stringee-cordova-plugin#readme",
+  "keywords": [
+    "cordova",
+    "plugin",
+    "stringee",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "license": "Apache-2",
+  "name": "stringee-cordova-plugin",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stringeecom/stringee-cordova-plugin.git"
+  },
+  "version": "1.0.0"
+}

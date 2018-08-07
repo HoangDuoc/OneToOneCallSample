@@ -1,0 +1,9 @@
+{
+    "libicucore.tbd": 1,
+    "libstdc++.dylib": 1,
+    "VideoToolbox.framework": 1,
+    "AudioToolbox.framework": 1,
+    "AVFoundation.framework": 1,
+    "GLKit.framework": 1,
+    "CoreFoundation.framework": 1
+}
