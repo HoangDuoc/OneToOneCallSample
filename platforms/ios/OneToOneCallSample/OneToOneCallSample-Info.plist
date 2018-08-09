@@ -52,5 +52,14 @@
       <key>NSAllowsArbitraryLoads</key>
       <true/>
     </dict>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>This app would like to access your microphone to let you record an audio</string>
+    <key>NSCameraUsageDescription</key>
+    <string>This app would like to access your camera to let you record a video</string>
+    <key>UIBackgroundModes</key>
+    <array>
+      <string>audio</string>
+      <string>voip</string>
+    </array>
   </dict>
 </plist>

@@ -1,0 +1,237 @@
+/* CSS reset */
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+fieldset,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+fieldset,
+img {
+  border: 0;
+}
+
+input {
+  border: 1px solid #b0b0b0;
+  padding: 3px 5px 4px;
+  color: #979797;
+  /* width: 190px;  */
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+th,
+var {
+  font-style: normal;
+  font-weight: normal;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+caption,
+th {
+  text-align: left;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+q:before,
+q:after {
+  content: "";
+}
+
+abbr,
+acronym {
+  border: 0;
+}
+
+/***********************************/
+#app {
+  font-family: "Roboto", sans-serif;
+  color: #616161;
+  background-color: #7e57c2;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+/**************** PAGE***************/
+.page {
+  height: 100px;
+}
+
+/****************LOGIN PAGE***************/
+.page-login {
+  padding: 20px;
+  padding-top: 80px;
+}
+.page-login .wrap-button-call {
+  width: 100%;
+  display: table;
+}
+.page-login .wrap-button-call button {
+  width: 46%;
+}
+.page-login .wrap-button-call button:last-child {
+  margin-left: 8%;
+}
+.page-login .wrap-overlay {
+  position: relative;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(146, 135, 187, 0.8) 0%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  transition: opacity 0.1s,
+    -webkit-transform 0.3s cubic-bezier(0.17, -0.65, 0.665, 1.25);
+  transition: opacity 0.1s,
+    transform 0.3s cubic-bezier(0.17, -0.65, 0.665, 1.25);
+  transition: opacity 0.1s,
+    transform 0.3s cubic-bezier(0.17, -0.65, 0.665, 1.25),
+    -webkit-transform 0.3s cubic-bezier(0.17, -0.65, 0.665, 1.25);
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+.page-login .svg-icon path {
+  stroke: rgba(255, 255, 255, 0.9);
+  fill: none;
+  stroke-width: 1;
+}
+.page-login .inputLogin {
+  border: none;
+  border-bottom: 1px solid white;
+}
+
+/****************VIDEO PAGE***************/
+#videoLocal {
+  /* background: #71afff; */
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -5;
+  /* background: url("https://articles-images.sftcdn.net/wp-content/uploads/sites/3/2016/05/bigstock-Video-Call-Conference-Chatting-109171367.jpg"); */
+  background-size: 100% 100%;
+}
+#videoRemote {
+  width: 100px;
+  height: 120px;
+  /* background: yellow; */
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: -4;
+  /* background: url("https://cdn.dribbble.com/users/199982/screenshots/4044699/furkan-avatar-dribbble_1x.png"); */
+  background-size: 100px 120px;
+}
+
+.wrap-btn-call {
+  width: 100%;
+  position: absolute;
+  z-index: 15;
+  bottom: 20px;
+}
+.wrap-btn-call button {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #0000003d;
+  margin: 10px;
+  border: none;
+}
+.wrap-btn-call button img {
+  width: 40px;
+}
+
+.switch-camera {
+  left: 20px;
+  top: 20px;
+}
+
+/************ANIMATION CALL*************/
+.call-animation {
+  background: #fff;
+  width: 135px;
+  height: 135px;
+  position: relative;
+  margin: 0 auto;
+  border-radius: 100%;
+  border: solid 5px #fff;
+  animation: play 2s ease infinite;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.call-animation img {
+  width: 135px;
+  height: 135px;
+  border-radius: 100%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+@keyframes play {
+  0% {
+    transform: scale(1);
+  }
+  15% {
+    box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.4);
+  }
+  25% {
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.4),
+      0 0 0 20px rgba(255, 255, 255, 0.2);
+  }
+  25% {
+    box-shadow: 0 0 0 15px rgba(255, 255, 255, 0.4),
+      0 0 0 30px rgba(255, 255, 255, 0.2);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

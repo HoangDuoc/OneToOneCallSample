@@ -22,8 +22,20 @@
     <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
+        <config-file parent="NSMicrophoneUsageDescription" platform="ios" target="*-Info.plist">
+            <string>This app would like to access your microphone to let you record an audio</string>
+        </config-file>
+        <config-file parent="NSCameraUsageDescription" platform="ios" target="*-Info.plist">
+            <string>This app would like to access your camera to let you record a video</string>
+        </config-file>
+        <config-file parent="UIBackgroundModes" target="*-Info.plist">
+            <array>
+                <string>audio</string>
+                <string>voip</string>
+            </array>
+        </config-file>
     </platform>
-    <plugin name="stringee-cordova-plugin" spec="https://github.com/stringeecom/stringee-cordova-plugin" />
     <engine name="ios" spec="^4.5.5" />
     <engine name="android" spec="^7.0.0" />
+    <plugin name="stringee-cordova-plugin" spec="https://github.com/stringeecom/stringee-cordova-plugin" />
 </widget>

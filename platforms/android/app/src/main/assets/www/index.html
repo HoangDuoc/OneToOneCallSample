@@ -1,49 +1,135 @@
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
 
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
 <html>
-    <head>
-        <!--
-        Customize this policy to fit your own app's needs. For more guidance, see:
-            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
-        Some notes:
-            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-                * Enable inline JS: add 'unsafe-inline' to default-src
-        -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-        <title>Hello World</title>
-    </head>
-    <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="css/utils.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <script src="js/jquery-3.1.0.min.js"></script>
+    <script src="js/script.js"></script>
+
+    <title>Hello World</title>
+
+</head>
+
+<body>
+
+    <!-- <div class="app">
+
+        <h1>Apache Cordova</h1>
+
+        <div id="deviceready" class="blink">
+            <p class="event listening">Connecting to Device</p>
+            <p class="event received">Device is Ready</p>
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script> -->
+
+
+    <div id="app">
+        <!-- PAGE LOGIN -->
+        <div class="page page-login">
+            <div class="position-relative mb-5 mt-30">
+                <img src="img/man.svg" width="100" class="margin-auto display-table"
+                />
+            </div>
+            <h1 class="text-center mb-20 color-white font-size-25">
+                <span style="color:#90dfaa">Logged:</span> userID1</h1>
+            <div class="wrap-input position-relative mb-20">
+                <svg class="svg-icon position-absolute left-10 bottom-10" viewBox="0 0 20 20"
+                    width="30">
+                    <path d="M0,20 a10,8 0 0,1 20,0z M10,0 a4,4 0 0,1 0,8 a4,4 0 0,1 0,-8"
+                        class="bg-white"></path>
+                </svg>
+                <input type="text" class="inputLogin width-100-percent pl-15 p-10 background-transparent color-white outline-none font-size-20"
+                />
+            </div>
+
+            <div class="wrap-button-call margin-auto">
+                <button class="button bg-pink btn-round">
+                    <span>Voice call </span>
+                </button>
+                <button class="button bg-pink btn-round">
+                    <span>Video call </span>
+                </button>
+            </div>
+
+        </div>
+
+        <!-- PAGE INCALL -->
+        <div class="page page-incall display-none">
+            <div class="switch-camera position-absolute z-index-20">
+                <img src="img/switch-camera.svg" width="30" />
+            </div>
+            <video id="videoLocal"></video>
+            <video id="videoRemote"></video>
+            <div class="wrap-btn-call">
+                <div class="display-table margin-auto">
+                    <button class="position-relative click-toggle outline-none">
+                        <img class="position-absolute icon-toggle display-none" src="img/icon-slash.svg"
+                        />
+                        <img src="img/icon-camera.svg" />
+                    </button>
+                    <button class="position-relative click-toggle outline-none">
+                        <img class="position-absolute icon-toggle display-none" src="img/icon-slash.svg"
+                        />
+                        <img src="img/icon-mic.svg" />
+                    </button>
+                    <button class="position-relative click-toggle outline-none">
+                        <img class="position-absolute icon-toggle display-none" src="img/icon-slash.svg"
+                        />
+                        <img src="img/icon-speaker.svg" />
+                    </button>
+                </div>
+                <div class="display-table margin-auto">
+                    <button class="bg-white">
+                        <img src="img/end-call-button-red.svg" />
+                    </button>
+                </div>
             </div>
         </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-    </body>
+
+        <!-- PAGE INCOMMING -->
+        <div class="page page-incommingcall display-none">
+            <div class="switch-camera position-absolute z-index-20">
+                <img src="img/switch-camera.svg" width="30" />
+            </div>
+            <div class="position-relative top-200 width-100-percent">
+                <div class="call-animation">
+                    <img class="img-circle" src="img/man.svg" alt="" width="135"
+                    />
+                </div>
+                <div class="text-center width-100-percent mt-30">
+                    <p class="color-white font-size-30 mb-5">Lê Thắng</p>
+                    <p class="color-white font-size-20 ">Stringee cuộc gọi đến</p>
+                </div>
+            </div>
+            <div class="wrap-btn-call">
+                <div class="display-table margin-auto">
+                    <button class="bg-white mr-50">
+                        <img src="img/end-call-button-red.svg" />
+                    </button>
+                    <button class="bg-white ml-50">
+                        <img src="img/phone-call-button.svg" />
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
 </html>
