@@ -20,19 +20,19 @@
           "NSMicrophoneUsageDescription": [
             {
               "xml": "<string>This app would like to access your microphone to let you record an audio</string>",
-              "count": 76
+              "count": 82
             }
           ],
           "NSCameraUsageDescription": [
             {
               "xml": "<string>This app would like to access your camera to let you record a video</string>",
-              "count": 76
+              "count": 82
             }
           ],
           "UIBackgroundModes": [
             {
               "xml": "<array><string>audio</string><string>voip</string></array>",
-              "count": 76
+              "count": 82
             }
           ]
         }

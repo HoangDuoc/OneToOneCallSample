@@ -46,20 +46,6 @@ var app = {
 
   onDeviceReady: function() {
     this.receivedEvent("app");
-
-    $(".click-toggle").on("click", function() {
-      console.log("DA CO CLICK");
-      $(this)
-        .find(".icon-toggle")
-        .toggle(
-          function() {
-            $(this).removeClass("display-none");
-          },
-          function() {
-            $(this).addClass("display-none");
-          }
-        );
-    });
   },
 
   receivedEvent: function(id) {
@@ -364,19 +350,12 @@ function makeCall(isVideo) {
 }
 
 function updateScreenFollowMode(mode) {
-  console.log("updateScreenFollowMode");
   switch (mode) {
     case SCREENMODE.LOGIN:
-      console.log("####### LOGIN");
       $(".page-login").removeClass("display-none");
       $(".page-incommingcall").addClass("display-none");
       $(".page-incall").addClass("display-none");
       $("#app").removeClass("background-transparent");
-
-      $("#btnMicro .icon-toggle").addClass("display-none");
-      $("#btnCamera .icon-toggle").addClass("display-none");
-      $("#imgSpeakerSlash").addClass("display-none");
-
       updateLbState("");
       isVideoCall = false;
 
@@ -385,14 +364,11 @@ function updateScreenFollowMode(mode) {
       isSpeaker = false;
       break;
     case SCREENMODE.INCOMINGCALL:
-      console.log("####### INCOMINGCALL");
       $(".page-login").addClass("display-none");
       $(".page-incommingcall").removeClass("display-none");
       $(".page-incall").addClass("display-none");
       break;
     case SCREENMODE.INVOICECALL:
-      console.log("####### INVOICECALL");
-
       $(".page-login").addClass("display-none");
       $(".page-incommingcall").addClass("display-none");
       $(".page-incall").removeClass("display-none");
@@ -425,8 +401,6 @@ function updateScreenFollowMode(mode) {
       $("#btnMicro .icon-toggle").addClass("display-none");
       $("#btnCamera .icon-toggle").addClass("display-none");
       $("#imgSpeakerSlash").addClass("display-none");
-
-      console.log("DEMoooooooo");
 
       isMute = false;
       isTurnOnCamera = true;
