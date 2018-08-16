@@ -573,7 +573,6 @@ static NSString *didHandleOnAnotherDevice   = @"didHandleOnAnotherDevice";
     int zIndex = [[command.arguments objectAtIndex:6] intValue];
     BOOL isOverlay = [[command.arguments objectAtIndex:7] boolValue];
 
-    NSLog(@"zIndex - %d", zIndex);
     StringeeCall *call = [callList objectForKey:iden];
 
     if (call) {

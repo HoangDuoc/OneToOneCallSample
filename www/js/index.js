@@ -155,14 +155,18 @@ function connectToStringeeServer() {
       };
 
       updateScreenFollowMode(SCREENMODE.INCOMINGCALL);
-      //   Stringee.requestPermissions(
-      //     isVideoCall,
-      //     function() {
-      // Gửi lại tín hiệu ringing cho bên gọi.
-      stringeeCall.initAnswer(success, failure);
-      // },
-      // function() {}
-      //   );
+      if (device.platform == "iOS") {
+        stringeeCall.initAnswer(success, failure);
+      } else {
+        Stringee.requestPermissions(
+          isVideoCall,
+          function() {
+            // Gửi lại tín hiệu ringing cho bên gọi.
+            stringeeCall.initAnswer(success, failure);
+          },
+          function() {}
+        );
+      }
     }
   });
 
@@ -185,7 +189,6 @@ function addEventListenners() {
 
 function configurePlatform() {
   if (device.platform == "iOS") {
-    // Là Android
     $("#videoLocal").css({ "z-index": -1 });
     $("#videoRemote").css({ "z-index": -5 });
   }
@@ -193,17 +196,33 @@ function configurePlatform() {
 
 function voiceCallTapped() {
   $("#btnVoice").on("click", function() {
-    // Stringee.requestPermissions(false, function() {
-    makeCall(false);
-    // }, function() {});
+    if (device.platform == "iOS") {
+      makeCall(false);
+    } else {
+      Stringee.requestPermissions(
+        false,
+        function() {
+          makeCall(false);
+        },
+        function() {}
+      );
+    }
   });
 }
 
 function videoCallTapped() {
   $("#btnVideo").on("click", function() {
-    // Stringee.requestPermissions(true, function() {
-    makeCall(true);
-    // }, function() {});
+    if (device.platform == "iOS") {
+      makeCall(true);
+    } else {
+      Stringee.requestPermissions(
+        true,
+        function() {
+          makeCall(true);
+        },
+        function() {}
+      );
+    }
   });
 }
 
