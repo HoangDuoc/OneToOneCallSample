@@ -19,6 +19,9 @@
         <param name="ios-package" value="CDVGestureHandler" />
         <param name="onload" value="true" />
     </feature>
+    <feature name="Device">
+        <param name="ios-package" value="CDVDevice" />
+    </feature>
     <feature name="StringeePlugin">
         <param name="ios-package" value="StringeePlugin" />
         <param name="onload" value="true" />

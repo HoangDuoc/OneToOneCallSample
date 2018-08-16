@@ -149,25 +149,25 @@ acronym {
 }
 
 /****************VIDEO PAGE***************/
-.page-incall #videoLocal {
-  background: #71afff;
+#videoRemote {
+  /* background: black; */
   width: 100%;
   height: 100%;
   position: absolute;
-  z-index: 5;
-  background: url("https://articles-images.sftcdn.net/wp-content/uploads/sites/3/2016/05/bigstock-Video-Call-Conference-Chatting-109171367.jpg");
-  background-size: 100% 100%;
+  z-index: 0;
+  /* background: url("https://articles-images.sftcdn.net/wp-content/uploads/sites/3/2016/05/bigstock-Video-Call-Conference-Chatting-109171367.jpg"); */
+  /* background-size: 100% 100%; */
 }
-.page-incall #videoRemote {
+#videoLocal {
   width: 100px;
   height: 120px;
-  background: yellow;
+  /* background: yellow; */
   position: absolute;
   right: 10px;
   top: 10px;
-  z-index: 10;
-  background: url("https://cdn.dribbble.com/users/199982/screenshots/4044699/furkan-avatar-dribbble_1x.png");
-  background-size: 100px 120px;
+  z-index: 1;
+  /* background: url("https://cdn.dribbble.com/users/199982/screenshots/4044699/furkan-avatar-dribbble_1x.png"); */
+  /* background-size: 100px 120px; */
 }
 
 .wrap-btn-call {

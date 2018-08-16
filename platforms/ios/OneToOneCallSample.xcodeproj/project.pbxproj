@@ -13,15 +13,16 @@
 		302D95F114D2391D003F00A1 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 302D95EF14D2391D003F00A1 /* MainViewController.m */; };
 		302D95F214D2391D003F00A1 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 302D95F014D2391D003F00A1 /* MainViewController.xib */; };
 		6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */; };
-		10636BEB5E3743448E08EDFD /* StringeePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE8E01853AC4621B334BF67 /* StringeePlugin.m */; };
-		2D825E6CF6884F9383067F63 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE86A835F5F4C6DBD013D64 /* libicucore.tbd */; };
-		CD71F7849151406393ADB27F /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B4FBB4A2221F4E9E9782605C /* libstdc++.dylib */; };
-		143D0C12814D4E0D80AAEA90 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 913A595D81FE4A4E84612670 /* VideoToolbox.framework */; };
-		369C63AC84DC4DEBBD6472E7 /* Stringee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B0297288473432E9C81FE23 /* Stringee.framework */; };
-		F9526340E3DC4B52BA744847 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEDEBD8306D6423AB3274A5E /* AudioToolbox.framework */; };
-		7006B82506034552A64B094F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D19353B786274E8492A8E2CA /* AVFoundation.framework */; };
-		38D9742DDB1F417DAFC0ADAD /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C91BC89BAEF14E77A345B722 /* GLKit.framework */; };
-		5FF985201AF542168ED7663B /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1F2C855B40943BDA15B4E7C /* CoreFoundation.framework */; };
+		530D459D42974CA1BE068F45 /* CDVDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E9D50AFDF148ABA0FB5E18 /* CDVDevice.m */; };
+		54A4FE4D05B34CD3B5A8E084 /* StringeePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C8036D74C543A5B7B8E43C /* StringeePlugin.m */; };
+		3A433E1F25C04011A5DB5553 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A3BC83F088004CEEB16B0EE9 /* libicucore.tbd */; };
+		B6340A61671945E8BC926385 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 320172AFBA5D49A0ADFCB009 /* libstdc++.dylib */; };
+		1A828D07135B476686D4B40F /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B29B79FBBC39482FAF2E13B1 /* VideoToolbox.framework */; };
+		A9D97BAF5ADE4CFBA2DB22B1 /* Stringee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E03A26BD5B7477AADE9A8CD /* Stringee.framework */; };
+		867FDE6925A4467A8699A4FF /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 969D2C53DCCF41E7A7D3DBA4 /* AudioToolbox.framework */; };
+		49BE146E54C14A15B21A5CD6 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72D29E3C60724BD496DE3FBE /* AVFoundation.framework */; };
+		1C3F201B66C8494780B91A6C /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887606B1D3F8484EBC067771 /* GLKit.framework */; };
+		C01A54C098754FCB85CC4559 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0081202BD8C54518A17AD57D /* CoreFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,16 +70,18 @@
 		EB87FDF41871DAF40020F90C /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = ../../config.xml; sourceTree = "<group>"; };
 		ED33DF2A687741AEAF9F8254 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = OneToOneCallSample/config.xml; sourceTree = "<group>"; };
-		4BE8E01853AC4621B334BF67 /* StringeePlugin.m */ = {isa = PBXFileReference; name = "StringeePlugin.m"; path = "stringee-cordova-plugin/StringeePlugin.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
-		2A611D3398F9419C88F7670F /* StringeePlugin.h */ = {isa = PBXFileReference; name = "StringeePlugin.h"; path = "stringee-cordova-plugin/StringeePlugin.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
-		2CE86A835F5F4C6DBD013D64 /* libicucore.tbd */ = {isa = PBXFileReference; name = "libicucore.tbd"; path = "usr/lib/libicucore.tbd"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = sourcecode.text-based-dylib-definition; explicitFileType = undefined; includeInIndex = 0; };
-		B4FBB4A2221F4E9E9782605C /* libstdc++.dylib */ = {isa = PBXFileReference; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = compiled.mach-o.dylib; explicitFileType = undefined; includeInIndex = 0; };
-		913A595D81FE4A4E84612670 /* VideoToolbox.framework */ = {isa = PBXFileReference; name = "VideoToolbox.framework"; path = "System/Library/Frameworks/VideoToolbox.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
-		6B0297288473432E9C81FE23 /* Stringee.framework */ = {isa = PBXFileReference; name = "Stringee.framework"; path = "OneToOneCallSample/Plugins/stringee-cordova-plugin/Stringee.framework"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
-		EEDEBD8306D6423AB3274A5E /* AudioToolbox.framework */ = {isa = PBXFileReference; name = "AudioToolbox.framework"; path = "System/Library/Frameworks/AudioToolbox.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
-		D19353B786274E8492A8E2CA /* AVFoundation.framework */ = {isa = PBXFileReference; name = "AVFoundation.framework"; path = "System/Library/Frameworks/AVFoundation.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
-		C91BC89BAEF14E77A345B722 /* GLKit.framework */ = {isa = PBXFileReference; name = "GLKit.framework"; path = "System/Library/Frameworks/GLKit.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
-		E1F2C855B40943BDA15B4E7C /* CoreFoundation.framework */ = {isa = PBXFileReference; name = "CoreFoundation.framework"; path = "System/Library/Frameworks/CoreFoundation.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		20E9D50AFDF148ABA0FB5E18 /* CDVDevice.m */ = {isa = PBXFileReference; name = "CDVDevice.m"; path = "cordova-plugin-device/CDVDevice.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		1FA39DD3C3334AE0A8831BAF /* CDVDevice.h */ = {isa = PBXFileReference; name = "CDVDevice.h"; path = "cordova-plugin-device/CDVDevice.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		F5C8036D74C543A5B7B8E43C /* StringeePlugin.m */ = {isa = PBXFileReference; name = "StringeePlugin.m"; path = "stringee-cordova-plugin/StringeePlugin.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		18A5FEEC13C345D7B5F52BC9 /* StringeePlugin.h */ = {isa = PBXFileReference; name = "StringeePlugin.h"; path = "stringee-cordova-plugin/StringeePlugin.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		A3BC83F088004CEEB16B0EE9 /* libicucore.tbd */ = {isa = PBXFileReference; name = "libicucore.tbd"; path = "usr/lib/libicucore.tbd"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = sourcecode.text-based-dylib-definition; explicitFileType = undefined; includeInIndex = 0; };
+		320172AFBA5D49A0ADFCB009 /* libstdc++.dylib */ = {isa = PBXFileReference; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = compiled.mach-o.dylib; explicitFileType = undefined; includeInIndex = 0; };
+		B29B79FBBC39482FAF2E13B1 /* VideoToolbox.framework */ = {isa = PBXFileReference; name = "VideoToolbox.framework"; path = "System/Library/Frameworks/VideoToolbox.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		8E03A26BD5B7477AADE9A8CD /* Stringee.framework */ = {isa = PBXFileReference; name = "Stringee.framework"; path = "OneToOneCallSample/Plugins/stringee-cordova-plugin/Stringee.framework"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		969D2C53DCCF41E7A7D3DBA4 /* AudioToolbox.framework */ = {isa = PBXFileReference; name = "AudioToolbox.framework"; path = "System/Library/Frameworks/AudioToolbox.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		72D29E3C60724BD496DE3FBE /* AVFoundation.framework */ = {isa = PBXFileReference; name = "AVFoundation.framework"; path = "System/Library/Frameworks/AVFoundation.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		887606B1D3F8484EBC067771 /* GLKit.framework */ = {isa = PBXFileReference; name = "GLKit.framework"; path = "System/Library/Frameworks/GLKit.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		0081202BD8C54518A17AD57D /* CoreFoundation.framework */ = {isa = PBXFileReference; name = "CoreFoundation.framework"; path = "System/Library/Frameworks/CoreFoundation.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,14 +90,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				301BF552109A68D80062928A /* libCordova.a in Frameworks */,
-				2D825E6CF6884F9383067F63 /* libicucore.tbd in Frameworks */,
-				CD71F7849151406393ADB27F /* libstdc++.dylib in Frameworks */,
-				143D0C12814D4E0D80AAEA90 /* VideoToolbox.framework in Frameworks */,
-				369C63AC84DC4DEBBD6472E7 /* Stringee.framework in Frameworks */,
-				F9526340E3DC4B52BA744847 /* AudioToolbox.framework in Frameworks */,
-				7006B82506034552A64B094F /* AVFoundation.framework in Frameworks */,
-				38D9742DDB1F417DAFC0ADAD /* GLKit.framework in Frameworks */,
-				5FF985201AF542168ED7663B /* CoreFoundation.framework in Frameworks */,
+				3A433E1F25C04011A5DB5553 /* libicucore.tbd in Frameworks */,
+				B6340A61671945E8BC926385 /* libstdc++.dylib in Frameworks */,
+				1A828D07135B476686D4B40F /* VideoToolbox.framework in Frameworks */,
+				A9D97BAF5ADE4CFBA2DB22B1 /* Stringee.framework in Frameworks */,
+				867FDE6925A4467A8699A4FF /* AudioToolbox.framework in Frameworks */,
+				49BE146E54C14A15B21A5CD6 /* AVFoundation.framework in Frameworks */,
+				1C3F201B66C8494780B91A6C /* GLKit.framework in Frameworks */,
+				C01A54C098754FCB85CC4559 /* CoreFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,14 +168,14 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2CE86A835F5F4C6DBD013D64 /* libicucore.tbd */,
-				B4FBB4A2221F4E9E9782605C /* libstdc++.dylib */,
-				913A595D81FE4A4E84612670 /* VideoToolbox.framework */,
-				6B0297288473432E9C81FE23 /* Stringee.framework */,
-				EEDEBD8306D6423AB3274A5E /* AudioToolbox.framework */,
-				D19353B786274E8492A8E2CA /* AVFoundation.framework */,
-				C91BC89BAEF14E77A345B722 /* GLKit.framework */,
-				E1F2C855B40943BDA15B4E7C /* CoreFoundation.framework */,
+				A3BC83F088004CEEB16B0EE9 /* libicucore.tbd */,
+				320172AFBA5D49A0ADFCB009 /* libstdc++.dylib */,
+				B29B79FBBC39482FAF2E13B1 /* VideoToolbox.framework */,
+				8E03A26BD5B7477AADE9A8CD /* Stringee.framework */,
+				969D2C53DCCF41E7A7D3DBA4 /* AudioToolbox.framework */,
+				72D29E3C60724BD496DE3FBE /* AVFoundation.framework */,
+				887606B1D3F8484EBC067771 /* GLKit.framework */,
+				0081202BD8C54518A17AD57D /* CoreFoundation.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -199,8 +202,10 @@
 		307C750510C5A3420062BCA9 /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
-				4BE8E01853AC4621B334BF67 /* StringeePlugin.m */,
-				2A611D3398F9419C88F7670F /* StringeePlugin.h */,
+				20E9D50AFDF148ABA0FB5E18 /* CDVDevice.m */,
+				1FA39DD3C3334AE0A8831BAF /* CDVDevice.h */,
+				F5C8036D74C543A5B7B8E43C /* StringeePlugin.m */,
+				18A5FEEC13C345D7B5F52BC9 /* StringeePlugin.h */,
 			);
 			name = Plugins;
 			path = OneToOneCallSample/Plugins;
@@ -328,7 +333,8 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
-				10636BEB5E3743448E08EDFD /* StringeePlugin.m in Sources */,
+				530D459D42974CA1BE068F45 /* CDVDevice.m in Sources */,
+				54A4FE4D05B34CD3B5A8E084 /* StringeePlugin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +362,8 @@
 				DEVELOPMENT_TEAM = 9L439MV268;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"OneToOneCallSample/Plugins/stringee-cordova-plugin\"",
+					"\"OneToOneCallSample/Plugins/stringee-cordova-plugin\"",
 					"\"OneToOneCallSample/Plugins/stringee-cordova-plugin\"",
 					"\"OneToOneCallSample/Plugins/stringee-cordova-plugin\"",
 					"\"OneToOneCallSample/Plugins/stringee-cordova-plugin\"",
@@ -388,6 +396,8 @@
 				DEVELOPMENT_TEAM = 9L439MV268;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"OneToOneCallSample/Plugins/stringee-cordova-plugin\"",
+					"\"OneToOneCallSample/Plugins/stringee-cordova-plugin\"",
 					"\"OneToOneCallSample/Plugins/stringee-cordova-plugin\"",
 					"\"OneToOneCallSample/Plugins/stringee-cordova-plugin\"",
 					"\"OneToOneCallSample/Plugins/stringee-cordova-plugin\"",

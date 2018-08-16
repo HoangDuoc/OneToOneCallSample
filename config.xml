@@ -35,6 +35,7 @@
             </array>
         </config-file>
     </platform>
+    <plugin name="cordova-plugin-device" spec="^2.0.2" />
     <plugin name="stringee-cordova-plugin" spec="https://github.com/stringeecom/stringee-cordova-plugin" />
     <engine name="ios" spec="^4.5.5" />
     <engine name="android" spec="^7.0.0" />

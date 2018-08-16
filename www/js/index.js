@@ -54,6 +54,9 @@ var app = {
     // Bắt sự kiện
     addEventListenners();
 
+    // Platform
+    configurePlatform();
+
     // Kết nối tới Stringee Server
     connectToStringeeServer();
   }
@@ -63,10 +66,10 @@ var app = {
 
 function connectToStringeeServer() {
   // 1. Lấy Token
-  var vietinbank1 =
-    "eyJjdHkiOiJzdHJpbmdlZS1hcGk7dj0xIiwidHlwIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJqdGkiOiJTS0xIb2NCdDl6Qk5qc1pLeThZaUVkSzRsU3NBZjhCSHpyLTE1MzM2MzA4NDIiLCJpc3MiOiJTS0xIb2NCdDl6Qk5qc1pLeThZaUVkSzRsU3NBZjhCSHpyIiwiZXhwIjoxNTM2MjIyODQyLCJ1c2VySWQiOiJ2aWV0aW5iYW5rMSJ9.QueGr-ooRFei6J5MnIXHka78CWuI76PKSRo2Bl-l51U";
-  var vietinbank2 =
-    "eyJjdHkiOiJzdHJpbmdlZS1hcGk7dj0xIiwidHlwIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJqdGkiOiJTS0xIb2NCdDl6Qk5qc1pLeThZaUVkSzRsU3NBZjhCSHpyLTE1MzM2MzA5MzMiLCJpc3MiOiJTS0xIb2NCdDl6Qk5qc1pLeThZaUVkSzRsU3NBZjhCSHpyIiwiZXhwIjoxNTM2MjIyOTMzLCJ1c2VySWQiOiJ2aWV0aW5iYW5rMiJ9.Y_b8StVSvyVtldjgeIr6NJEq1NgsEiQQEqvGvmWzlBo";
+  var stringee1 =
+    "eyJjdHkiOiJzdHJpbmdlZS1hcGk7dj0xIiwidHlwIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJqdGkiOiJTS0NsejhzQ2tKeDNzdU13SmdCdDJ6bUc2T01JbVRYb2Y1LTE1MzQzMzA3NTMiLCJpc3MiOiJTS0NsejhzQ2tKeDNzdU13SmdCdDJ6bUc2T01JbVRYb2Y1IiwiZXhwIjoxNTM2OTIyNzUzLCJ1c2VySWQiOiJzdHJpbmdlZTEifQ.sYDZOSSHEkx-RrDdRLVHporDXs21glsKQnW77RnP4Vo";
+  var stringee2 =
+    "eyJjdHkiOiJzdHJpbmdlZS1hcGk7dj0xIiwidHlwIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJqdGkiOiJTS0NsejhzQ2tKeDNzdU13SmdCdDJ6bUc2T01JbVRYb2Y1LTE1MzQzMzA3ODUiLCJpc3MiOiJTS0NsejhzQ2tKeDNzdU13SmdCdDJ6bUc2T01JbVRYb2Y1IiwiZXhwIjoxNTM2OTIyNzg1LCJ1c2VySWQiOiJzdHJpbmdlZTIifQ.bd4qBQCNeBBLQqpwcFrsusYAsx101-Z0pnMmT8YTtj0";
 
   // Khởi tạo StringeeClient để connect đến Stringee Server
   stringeeClient = Stringee.initStringeeClient();
@@ -145,19 +148,25 @@ function connectToStringeeServer() {
       var success = function(message) {
         console.log(message);
         // Báo lại trạng thái ringing thành công thì chuyển màn hình
-        updateScreenFollowMode(SCREENMODE.INCOMINGCALL);
       };
 
       var failure = function(message) {
         console.log(message);
       };
 
+      updateScreenFollowMode(SCREENMODE.INCOMINGCALL);
+      //   Stringee.requestPermissions(
+      //     isVideoCall,
+      //     function() {
       // Gửi lại tín hiệu ringing cho bên gọi.
       stringeeCall.initAnswer(success, failure);
+      // },
+      // function() {}
+      //   );
     }
   });
 
-  stringeeClient.connect(vietinbank2);
+  stringeeClient.connect(stringee2);
 }
 
 // TODO: Actions
@@ -171,17 +180,30 @@ function addEventListenners() {
   microTapped();
   cameraTapped();
   speakerTapped();
+  switchCameraTapped();
+}
+
+function configurePlatform() {
+  if (device.platform == "iOS") {
+    // Là Android
+    $("#videoLocal").css({ "z-index": -1 });
+    $("#videoRemote").css({ "z-index": -5 });
+  }
 }
 
 function voiceCallTapped() {
   $("#btnVoice").on("click", function() {
+    // Stringee.requestPermissions(false, function() {
     makeCall(false);
+    // }, function() {});
   });
 }
 
 function videoCallTapped() {
   $("#btnVideo").on("click", function() {
+    // Stringee.requestPermissions(true, function() {
     makeCall(true);
+    // }, function() {});
   });
 }
 
@@ -215,8 +237,10 @@ function rejectCallTapped() {
 
 function answerCallTapped() {
   $("#btnAnswer").on("click", function() {
+    console.log("Da an vao answer");
+
     var success = function(message) {
-      console.log(message);
+      console.log("Answer thanh cong" + message);
       if (isVideoCall) {
         updateScreenFollowMode(SCREENMODE.INVIDEOCALL);
       } else {
@@ -225,7 +249,7 @@ function answerCallTapped() {
     };
 
     var failure = function(message) {
-      console.log(message);
+      console.log("Answer that bai" + message);
       updateScreenFollowMode(SCREENMODE.LOGIN);
     };
 
@@ -278,7 +302,19 @@ function speakerTapped() {
   });
 }
 
-function switchCameraTapped() {}
+function switchCameraTapped() {
+  $("#btnSwitchCamera").on("click", function() {
+    var success = function(message) {
+      console.log(message);
+    };
+
+    var failure = function(message) {
+      console.log(message);
+    };
+
+    stringeeCall.switchCamera(success, failure);
+  });
+}
 
 function makeCall(isVideo) {
   if (!stringeeClient.hasConnected) {
@@ -350,12 +386,19 @@ function makeCall(isVideo) {
 }
 
 function updateScreenFollowMode(mode) {
+  console.log("updateScreenFollowMode");
   switch (mode) {
     case SCREENMODE.LOGIN:
+      console.log("####### LOGIN");
       $(".page-login").removeClass("display-none");
       $(".page-incommingcall").addClass("display-none");
       $(".page-incall").addClass("display-none");
       $("#app").removeClass("background-transparent");
+
+      $("#btnMicro .icon-toggle").addClass("display-none");
+      $("#btnCamera .icon-toggle").addClass("display-none");
+      $("#imgSpeakerSlash").addClass("display-none");
+
       updateLbState("");
       isVideoCall = false;
 
@@ -364,11 +407,14 @@ function updateScreenFollowMode(mode) {
       isSpeaker = false;
       break;
     case SCREENMODE.INCOMINGCALL:
+      console.log("####### INCOMINGCALL");
       $(".page-login").addClass("display-none");
       $(".page-incommingcall").removeClass("display-none");
       $(".page-incall").addClass("display-none");
       break;
     case SCREENMODE.INVOICECALL:
+      console.log("####### INVOICECALL");
+
       $(".page-login").addClass("display-none");
       $(".page-incommingcall").addClass("display-none");
       $(".page-incall").removeClass("display-none");
@@ -401,6 +447,8 @@ function updateScreenFollowMode(mode) {
       $("#btnMicro .icon-toggle").addClass("display-none");
       $("#btnCamera .icon-toggle").addClass("display-none");
       $("#imgSpeakerSlash").addClass("display-none");
+
+      console.log("DEMoooooooo");
 
       isMute = false;
       isTurnOnCamera = true;
@@ -466,11 +514,13 @@ function handleDidChangeSignalingState(event) {
       break;
     case 3:
       // Busy
+      stringeeCall.hangup();
       stringeeCall = null;
       updateScreenFollowMode(SCREENMODE.LOGIN);
       break;
     case 4:
       // End
+      stringeeCall.hangup();
       stringeeCall = null;
       updateScreenFollowMode(SCREENMODE.LOGIN);
       stopTimer();
@@ -498,28 +548,32 @@ function handleDidChangeMediaState(event) {
 }
 
 function handleDidReceiveLocalStream(event) {
-  console.log("***" + "didReceiveLocalStream" + "***" + event.callId);
-  var success = function(message) {
-    console.log(message);
-  };
+  if (isVideoCall) {
+    console.log("***" + "didReceiveLocalStream" + "***" + event.callId);
+    var success = function(message) {
+      console.log(message);
+    };
 
-  var failure = function(message) {
-    console.log(message);
-  };
+    var failure = function(message) {
+      console.log(message);
+    };
 
-  stringeeCall.renderVideo(true, "videoLocal", success, failure);
+    stringeeCall.renderVideo(true, true, "videoLocal", success, failure);
+  }
 }
 
 function handleDidReceiveRemoteStream(event) {
-  console.log("***" + "didReceiveRemoteStream" + "***" + event.callId);
-  var success = function(message) {
-    console.log(message);
-  };
+  if (isVideoCall) {
+    console.log("***" + "didReceiveRemoteStream" + "***" + event.callId);
+    var success = function(message) {
+      console.log(message);
+    };
 
-  var failure = function(message) {
-    console.log(message);
-  };
-  stringeeCall.renderVideo(false, "videoRemote", success, failure);
+    var failure = function(message) {
+      console.log(message);
+    };
+    stringeeCall.renderVideo(false, false, "videoRemote", success, failure);
+  }
 }
 
 function handleDidHandleOnAnotherDevice(event) {
